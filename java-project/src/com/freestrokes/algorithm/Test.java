@@ -1,4 +1,4 @@
-package com.freestrokes;
+package com.freestrokes.algorithm;
 
 public class Test {
 
