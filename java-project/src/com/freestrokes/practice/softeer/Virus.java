@@ -1,4 +1,4 @@
-package com.freestrokes.practice;
+package com.freestrokes.practice.softeer;
 
 import java.util.*;
 import java.io.*;
@@ -54,7 +54,6 @@ public class Virus {
 //        for(int i = 1; i <= n; i++) {
 //            result = (result * p) % 1000000007;
 //        }
-//        System.out.println(result);
 
         // TODO: CASE2)
         result = virusCalc(k, p, n);

@@ -1,4 +1,4 @@
-package com.freestrokes.practice;
+package com.freestrokes.practice.softeer;
 
 public class Test {
 
