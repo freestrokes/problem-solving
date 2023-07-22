@@ -53,15 +53,20 @@ public class ScoreAverage {
     // Math.floor() -> 내림
     // Math.abs() -> 절대값
 
+    public static int n, k, a, b, interval;
+    public static double sum;
+    public static int[] scoreArr, intervalArr;
+    public static double[] sumArr;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int n = Integer.parseInt(st.nextToken()); // 학생 수
-        int k = Integer.parseInt(st.nextToken()); // 구간 수
-        int[] scoreArr = new int[n + 1];
-        int[] intervalArr = new int[k + 1];
-        double[] sumArr = new double[k + 1];
+        n = Integer.parseInt(st.nextToken()); // 학생 수
+        k = Integer.parseInt(st.nextToken()); // 구간 수
+        scoreArr = new int[n];
+        intervalArr = new int[k];
+        sumArr = new double[k];
 
         st = new StringTokenizer(br.readLine());
 
@@ -73,10 +78,10 @@ public class ScoreAverage {
         // 구간에 따른 성적 입력
         for (int i = 0; i < k; i++) {
             st = new StringTokenizer(br.readLine());
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
-            int interval = b - a + 1;
-            double sum = 0.00D;
+            a = Integer.parseInt(st.nextToken());
+            b = Integer.parseInt(st.nextToken());
+            interval = b - a + 1;
+            sum = 0.00D;
 
             for (int j = a-1; j < b; j++) {
                 sum += scoreArr[j];

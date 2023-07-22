@@ -1,9 +1,7 @@
 package com.freestrokes.practice.softeer;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.*;
+import java.io.*;
 
 /**
  * 수퍼 바이러스 (Super Virus)
@@ -40,12 +38,12 @@ import java.util.StringTokenizer;
  */
 public class SuperVirus {
 
-    // TODO: 런타임과 시간초과 에러가 나는데 확인 필요.
+    // TODO: 런타임 에러와 시간초과 에러 발생하는 부분 확인 필요.
 
     public static void main(String[] args) throws IOException {
 
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(bf.readLine());
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
         int k = Integer.parseInt(st.nextToken()); // 바이러스의 수
         int p = Integer.parseInt(st.nextToken()); // 증가율

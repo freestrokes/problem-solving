@@ -38,18 +38,21 @@ import java.io.*;
  */
 public class Virus {
 
+    public static int k, p, n;
+    public static long result;
+
     public static void main(String[] args) throws IOException {
 
         // BufferedReaderd와 Scanner의 입력 속도를 비교해보면 BufferedReader가 더 빠르게 동작한다.
         // 적은 양의 데이터인 경우엔 문제가 없겠지만 데이터 양이 많아질수록 성능 차이는 크게 나타난다.
         // BufferedReader가 버퍼에 입력값을 버퍼에 저장했다가 전송하기 때문에 더 빠르다.
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(bf.readLine());
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int k = Integer.parseInt(st.nextToken()); // 바이러스의 수
-        int p = Integer.parseInt(st.nextToken()); // 증가율
-        int n = Integer.parseInt(st.nextToken()); // 시간 (초)
-        long result = k;
+        k = Integer.parseInt(st.nextToken()); // 바이러스의 수
+        p = Integer.parseInt(st.nextToken()); // 증가율
+        n = Integer.parseInt(st.nextToken()); // 시간 (초)
+        result = k;
 
         // TODO: CASE1)
         // for문을 사용한 반복.
