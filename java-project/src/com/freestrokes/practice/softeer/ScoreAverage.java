@@ -89,8 +89,11 @@ public class ScoreAverage {
         // 성적 평균 출력
         for (int i = 0; i < k; i++) {
             // printf 사용하여 자릿수 출력.
-            //
             System.out.printf("%.2f\n", sumArr[i] / intervalArr[i]);
+
+            // TODO: 아래와 같이 String.format() 사용해도 됨.
+//            String result = String.format("%.2f", sumArr[i] / intervalArr[i]);
+//            System.out.println(result);
         }
     }
 }
