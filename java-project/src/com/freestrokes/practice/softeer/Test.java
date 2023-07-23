@@ -38,6 +38,35 @@ public class Test {
         float floatValue = 0.00F;
 
         System.out.printf("%.2f\n", doubleValue);
+
+        // Arrays.sort() 사용을 위해서는 wrapper 클래스를 사용해야 함.
+        Integer[] sortArr = {1, 26, 17, 25, 99, 44, 303};
+
+        Arrays.sort(sortArr);
+        System.out.println(Arrays.toString(sortArr));
+
+        Arrays.sort(sortArr, Collections.reverseOrder());
+        System.out.println(Arrays.toString(sortArr));
+
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "value1");
+        map.put(2, "value2");
+        map.put(3, "value3");
+
+        Iterator<Integer> keys = map.keySet().iterator();
+        while( keys.hasNext() ){
+            Integer key = keys.next();
+            System.out.println("key: " + key + " / value: " + map.get(key));
+        }
+
+        for ( Integer key : map.keySet() ){
+            System.out.println("key: " + key + " / value: " + map.get(key));
+        }
+
+        for( Map.Entry<Integer, String> element : map.entrySet() ){
+            System.out.println("key: " + element.getKey() + " / value: " + element.getValue());
+        }
+
     }
 
     public static long recursiveCalc(int count) {

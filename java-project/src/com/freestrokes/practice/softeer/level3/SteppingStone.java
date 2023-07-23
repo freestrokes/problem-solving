@@ -1,10 +1,12 @@
-package com.freestrokes.practice.softeer;
+package com.freestrokes.practice.softeer.level3;
 
 import java.util.*;
 import java.io.*;
 
 /**
  * 징검다리 (Stepping Stone)
+ *
+ * 난이도: 3
  *
  * 문제:
  * 남북으로 흐르는 개울에 동서로 징검다리가 놓여져 있다.

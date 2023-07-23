@@ -1,10 +1,12 @@
-package com.freestrokes.practice.softeer;
+package com.freestrokes.practice.softeer.level3;
 
 import java.util.*;
 import java.io.*;
 
 /**
  * 성적 평균 (Score Average)
+ *
+ * 난이도: 3
  *
  * 문제:
  * N명의 학생들의 성적이 학번순서대로 주어졌다.
