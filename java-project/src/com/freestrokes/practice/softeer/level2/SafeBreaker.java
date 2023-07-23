@@ -42,6 +42,7 @@ import java.io.*;
  *
  * 참고:
  * https://january-diary.tistory.com/entry/Softeer-%EA%B8%88%EA%B3%A0%ED%84%B8%EC%9D%B4-JAVA
+ * https://velog.io/@frobenius/Softeer-%EA%B8%88%EA%B3%A0%ED%84%B8%EC%9D%B4-java
  *
  */
 public class SafeBreaker {
