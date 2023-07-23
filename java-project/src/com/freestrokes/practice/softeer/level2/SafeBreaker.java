@@ -46,13 +46,40 @@ import java.io.*;
  */
 public class SafeBreaker {
 
-    public static int N, W;
+    public static int N, W, availableWeight, totalValue;
+    public static int[] jewelArr;
 
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         List<int[]> jewelList = new ArrayList<>();
 
+        N = Integer.parseInt(st.nextToken());
+        W = Integer.parseInt(st.nextToken());
+        availableWeight = N;
+
+        for (int i = 0; i < W; i++) {
+            jewelArr = new int[2];
+            st = new StringTokenizer(br.readLine());
+            jewelArr[0] = Integer.parseInt(st.nextToken()); // 귀금속 무게
+            jewelArr[1] = Integer.parseInt(st.nextToken()); // 귀금속 가격(kg당)
+            jewelList.add(jewelArr);
+        }
+
+        jewelList.sort((a, b) -> b[1] - a[1]);
+
+        jewelList.forEach(item -> {
+            if (availableWeight > 0) {
+                if (item[0] <= availableWeight) {
+                    totalValue += item[0] * item[1];
+                } else {
+                    totalValue += availableWeight * item[1];
+                }
+                availableWeight -= item[0];
+            }
+        });
+
+        System.out.println(totalValue);
 
     }
 

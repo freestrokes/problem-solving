@@ -67,6 +67,25 @@ public class Test {
             System.out.println("key: " + element.getKey() + " / value: " + element.getValue());
         }
 
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        // 내림차순
+        list.sort((a, b) -> b - a);
+        list.forEach(item -> {
+          System.out.print(item + " ");
+        });
+        System.out.println();
+
+        // 오름차순
+        list.sort((a, b) -> a - b);
+        list.forEach(item -> {
+            System.out.print(item + " ");
+        });
+        System.out.println();
+
     }
 
     public static long recursiveCalc(int count) {
