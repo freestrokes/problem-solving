@@ -33,7 +33,8 @@ import java.io.*;
  *
  *
  * 참고:
- *
+ * https://shinny.tistory.com/266
+ * https://choykim.tistory.com/2
  *
  */
 public class SnailStep {
