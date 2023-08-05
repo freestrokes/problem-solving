@@ -66,44 +66,40 @@ public class SnailStep {
             if (i == maxUp && j < maxRight) {
                 squareArr[i][j] = ++step;
                 j++;
-
                 if (j == maxRight) {
+                    i++;
                     j--;
                     maxRight--;
-                    i++;
                 }
             }
             // 아래로 채우기
-            if (i < maxDown && j == maxRight) {
+            if (j == maxRight && i < maxDown) {
                 squareArr[i][j] = ++step;
                 i++;
-
                 if (i == maxDown) {
                     i--;
-                    maxDown--;
                     j--;
+                    maxDown--;
                 }
             }
             // 왼쪽으로 채우기
             if (i == maxDown && j > maxLeft) {
                 squareArr[i][j] = ++step;
                 j--;
-
                 if (j == maxLeft) {
+                    i--;
                     j++;
                     maxLeft++;
-                    i--;
                 }
             }
             // 위로 채우기
-            if (i > maxUp && j == maxLeft) {
+            if (j == maxLeft && i > maxUp) {
                 squareArr[i][j] = ++step;
                 i--;
-
                 if (i == maxUp) {
                     i++;
-                    maxUp++;
                     j++;
+                    maxUp++;
                 }
             }
         }
