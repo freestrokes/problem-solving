@@ -90,9 +90,10 @@ public class QueueByArray implements Queue {
             System.out.println("Peeking fail! Queue is empty!");
             return 0;
         } else {
-            // front 포인터는 삭제한 위치에 있으므로 +1을 해줘서 첫번째 요소를 추출하도록 지정.
-            System.out.println("Peeked Item : " + queueArr[front+1]);
-            return queueArr[front+1];
+            // front 포인터가 첫번째 요소를 추출하도록 설정.
+            front = (front + 1) % this.queueSize;
+            System.out.println("Peeked Item : " + queueArr[front]);
+            return queueArr[front];
         }
     }
 
@@ -116,7 +117,7 @@ public class QueueByArray implements Queue {
             System.out.print("Queue elements : ");
             // front 포인터는 -1 또는 삭제된 요소의 위치에 있기 때문에,
             // +1 위치를 시작점으로 지정.
-            for(int i=front+1; i<=rear; i++) {
+            for(int i = front + 1; i <= rear; i++) {
                 System.out.print(queueArr[i] + " ");
             }
             System.out.println();
