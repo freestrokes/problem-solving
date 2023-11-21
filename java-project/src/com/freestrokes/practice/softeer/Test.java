@@ -13,14 +13,14 @@ public class Test {
 
     public static void main(String[] args) throws IOException {
 
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(bf.readLine());
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
         int value1 = Integer.parseInt(st.nextToken());
         int value2 = Integer.parseInt(st.nextToken());
         int value3 = Integer.parseInt(st.nextToken());
 
-        st = new StringTokenizer(bf.readLine());
+        st = new StringTokenizer(br.readLine());
 
         int value4 = Integer.parseInt(st.nextToken());
         int value5 = Integer.parseInt(st.nextToken());
