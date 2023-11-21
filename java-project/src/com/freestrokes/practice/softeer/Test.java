@@ -5,6 +5,8 @@ import java.io.*;
 
 public class Test {
 
+    // NOTE: 메인 메서드 실행을 위해선 control + shift + r 또는 run 실행.
+
     // public static int value1;
     // public static int value2;
     // public static int value3;
