@@ -47,7 +47,7 @@ import java.io.*;
 public class Keylogger {
 
     public static int N;
-    public static String data, str, beforeStr;
+    public static String data, str, beforeStr, token, removeToken, keylog;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -59,23 +59,65 @@ public class Keylogger {
 
         data = st.nextToken();
 
-        System.out.println(getResult(data));
+        System.out.println(getResult1(data));
+        System.out.println(getResult2(data));
+        System.out.println(getResult3(data));
     }
 
-    public static String getResult(String data) {
+    // Solution1
+    public static String getResult1(String keylog) {
+        data = keylog;
+
+        if (!data.contains("#")) {
+            return data;
+        } else {
+            for (int i = 0; i < data.length(); i++) {
+                token = data.substring(i, i+1);
+
+                if (token.equals("#")) {
+                    if (i == 0) {
+                        getResult1(data.substring(i + 1));
+                    } else {
+                        removeToken = data.substring(i-1, i);
+                        getResult1(data.replaceFirst(removeToken, "").replaceFirst("#", ""));
+                    }
+                }
+            }
+        }
+
+        return data;
+    }
+
+    // Solution2
+    public static String getResult2(String data) {
         for (int i = 0; i < data.length(); i++) {
             str = data.substring(i, i+1);
 
             if ("#".equals(str)) {
                 if (i == 0) {
-                    data = getResult(data.substring(i+1));
+                    data = getResult2(data.substring(i+1));
                 } else {
                     beforeStr = data.substring(i-1, i);
-                    data = getResult(data.replaceFirst(beforeStr, "").replaceFirst(str, ""));
+                    data = getResult2(data.replaceFirst(beforeStr, "").replaceFirst(str, ""));
                 }
             }
         }
         return data;
+    }
+
+    // Solution3
+    public static String getResult3(String keylog) {
+        String resultStr = keylog;
+
+        if (resultStr.contains("#")) {
+            String removeStr = "#";
+            if (resultStr.indexOf("#") > 0) {
+                removeStr = resultStr.substring(resultStr.indexOf("#") - 1, resultStr.indexOf("#")).concat("#");
+            }
+            resultStr = getResult3(resultStr.replaceFirst(removeStr, ""));
+        }
+
+        return resultStr;
     }
 }
 
